@@ -42,12 +42,13 @@ pipeline {
             }
         }
         stage('Build') {
-            steps
+            steps {
                 sh """
                     ls -la
                     zip -q -r catalogue.zip ./* -x ".git" -x "*.zip"
                     ls -ltr
                 """
+            }
         }
         stage('Deploy') {
             steps {
