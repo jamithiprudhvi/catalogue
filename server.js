@@ -99,6 +99,7 @@ app.get('/products/:cat', (req, res) => {
 });
 
 // all categories
+// created a new version
 app.get('/categories', (req, res) => {
     if(mongoConnected) {
         collection.distinct('categories').then((categories) => {
