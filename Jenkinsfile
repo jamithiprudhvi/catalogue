@@ -42,9 +42,11 @@ pipeline {
             }
         }
         stage('Build') {
-            steps {
-                echo 'Testing..'
-            }
+            sh """
+                ls -la
+                zip -q -r catalogue.zip ./* -x ".git" -x "*.zip"
+                ls -ltr
+            """
         }
         stage('Deploy') {
             steps {
@@ -59,6 +61,7 @@ pipeline {
     post { 
         always { 
             echo 'I will always say Hello again'
+            deleteDir()
         }
         failure { 
             echo 'This runs when pipeline is failed, used generally to send some alerts'
