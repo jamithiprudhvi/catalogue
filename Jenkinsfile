@@ -88,8 +88,7 @@ pipeline {
             when {
                 expression{
                     params.Deploy = true
-                }
-                params.Deploy = true
+                }                
             }
             steps {
                 script {
