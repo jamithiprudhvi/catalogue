@@ -14,4 +14,3 @@ else{
     echo "This is PRODUCTION, deal with CR process"
 }
 
-decidePipeline(Map configMap)
